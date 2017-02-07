@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Booking } from './booking';
+import {Router, ActivatedRoute, Params} from '@angular/router';
+import { Http } from '@angular/http';
 
 @Component({
 	moduleId: module.id,
@@ -15,7 +17,9 @@ export class NewMeetingRoomComponent{
 	public floors = new Array();
 	public bookedList = new Array();
 	public submitted;
-	constructor(){
+	
+	constructor(private http:Http,private activatedRoute: ActivatedRoute,private router:Router){
+		
 		this.floors = ["Ground Floor", "First Floor", "Second Floor","Third Floor"];		
 		this.model = new Booking(null,null,null,null,null,null,null);
 		this.submitted = false;	
@@ -46,7 +50,7 @@ export class NewMeetingRoomComponent{
 		   
             this.bookedList.push(entry);
             localStorage.setItem("bookedLists", JSON.stringify(this.bookedList));
-			
+			this.router.navigate(['/room/listing']);
 			
             
         }
