@@ -1,0 +1,20 @@
+[
+{
+"roomId": 101,
+"roomName": "Angular Project Meeting Room",
+"roomDescription": "Angular Project Meeting Room -Room 101",
+"isOccupied": true
+},
+{
+"roomId": 102,
+"roomName": "Java Project Meeting Room",
+"roomDescription": "Java Project Meeting Room -Room 102",
+"isOccupied": false
+},
+{
+"roomId": 103,
+"roomName": "PHP Project Meeting Room",
+"roomDescription": "PHP Project Meeting Room -Room 103",
+"isOccupied": true
+}
+]
