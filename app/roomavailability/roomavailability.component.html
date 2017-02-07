@@ -7,7 +7,7 @@
 	</select>		
 </div>
 
-<span [class.available]="MeetingStatus">{{MeetingStatus ? 'Booked':'Available'}}</span>
+<span *ngIf="MeetingStatus">Room Status:{{ MeetingStatus }}</span>
 
 
 

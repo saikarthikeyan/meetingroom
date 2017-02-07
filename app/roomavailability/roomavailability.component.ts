@@ -15,7 +15,7 @@ export class RoomAvailabilityComponent {
 			
 			if(MeetingID == mr.book_id){
 		    
-			this.MeetingStatus = mr.booking_status;
+			this.MeetingStatus = mr.booking_status ? "Booked":"Available";
 			
 			}			  
 		  }
