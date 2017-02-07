@@ -1,0 +1,44 @@
+<div class="container">
+	<h1> Add Room </h1>
+	<form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+	
+	<div class="form-group">
+    <label for="email">Room Name:</label>
+    <input class="form-control" [(ngModel)]="model.roomName" #roomName="ngModel" name="roomName" required="true">
+   </div>
+   
+   <div class="form-group">
+    <label for="email">Room No:</label>
+    <input class="form-control" [(ngModel)]="model.roomNo" #roomNo="ngModel" name="roomNo" required="true" type="number" minlength="1" maxlength="10" min="0">
+   </div>
+   
+    <div class="form-group">
+    <label for="email">Floor Name:</label>
+    <select *ngIf="floors.length > 0" class="form-control" name="floorName" id="floorName" required="true" [(ngModel)]="model.floorName" >
+				<option *ngFor="let floor of floors" >{{ floor }}</option>
+	</select>		
+    </div>
+	
+	<div class="form-group">
+    <label for="email">Project Name:</label>
+    <input type="text" class="form-control" id="projectName" [(ngModel)]="model.projectName" name="projectName" required="false" minlength="3">
+    </div>
+	
+	<div class="form-group">
+    <label for="email">Booking Time:</label>
+    <input type="datetime-local" class="form-control" id="bookingTime" [(ngModel)]= "model.bookingTime" name="bookingTime">
+    </div>
+	
+	<div class="form-group">
+	<label for="email">Room Status:</label>
+    <input type="checkbox"  class="move-left" id="bookingStatus" [(ngModel)]= "model.bookingStatus" name="bookingStatus">
+    </div>
+
+	
+	<div class="form-group">		
+		<button type="submit" class="btn btn-default" [disabled]="!bookingForm.form.valid">Submit</button>
+		<button type="button" class="btn btn-default" (click)=" bookingForm.reset() ">Reset Form</button>		
+	</div>
+	
+	</form>
+</div>

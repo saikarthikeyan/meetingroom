@@ -1,0 +1,23 @@
+<h1>Meeting Room Availability</h1>
+<div class="form-group">
+    <label for="email">Select Meeting Room:</label>
+    <select [ngModel]="selectedDevice" (ngModelChange)="onChange($event)"  class="form-control">
+				<option value="Select" >Select</option>
+                <option *ngFor="let item of meetingrooms" value="{{ item.book_id }}">{{item.room_name }}</option>
+	</select>		
+</div>
+
+<span [class.available]="MeetingStatus">{{MeetingStatus ? 'Booked':'Available'}}</span>
+
+
+
+ 
+ 
+ 
+
+    
+ 
+
+  
+
+

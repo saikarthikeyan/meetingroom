@@ -1,0 +1,17 @@
+<h1>List Meeting Rooms</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Meeting Room Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let room of listOFRoom">
+        <td><a routerLink="/room/details/{{ room.book_id }}">{{room.room_name}}</a></td>
+      </tr>
+    </tbody>
+</table>
+
+
+
+
